@@ -1,0 +1,170 @@
+{
+	"format": 3,
+	"game": {
+		"name": "YsTest"
+	},
+	"libraries": [
+		"khage",
+		"cosmos"
+	],
+	"assets": [
+		{
+			"name": "dummy_atlas.png",
+			"type": "image",
+			"original_width": 2048,
+			"original_height": 2048,
+			"files": [
+				"dummy_atlas.png"
+			]
+		},
+		{
+			"name": "dummy_atlas_n.png",
+			"type": "image",
+			"original_width": 2048,
+			"original_height": 2048,
+			"files": [
+				"dummy_atlas_n.png"
+			]
+		},
+		{
+			"name": "dummy_atlas.json",
+			"type": "blob",
+			"files": [
+				"dummy_atlas.json"
+			]
+		},
+		{
+			"name": "dummy_sprites.json",
+			"type": "blob",
+			"files": [
+				"dummy_sprites.json"
+			]
+		},
+		{
+			"type": "blob",
+			"size": 24,
+			"name": "Arial24.kravur",
+			"files": [
+				"Arial24.kravur"
+			]
+		},
+		{
+			"type": "blob",
+			"size": 72,
+			"name": "GrapeSoda72.kravur",
+			"files": [
+				"GrapeSoda72.kravur"
+			]
+		},
+		{
+			"type": "music",
+			"name": "music",
+			"files": [
+				"music.ogg"
+			]
+		}
+	],
+	"rooms": [
+		{
+			"assets": [
+				"dummy_atlas.json",
+				"dummy_atlas.png",
+				"dummy_sprites.json",
+				"dummy_atlas_n.png",
+				"music"
+			],
+			"name": "room0",
+			"neighbours": [],
+			"parent": null
+		},
+		{
+			"assets": [
+				"Arial24.kravur",
+				"GrapeSoda72.kravur"
+			],
+			"name": "loading",
+			"neighbours": [],
+			"parent": null
+		}
+	],
+	"shaders": [
+		{
+			"files": [
+				"normal.frag.essl"
+			],
+			"name": "normal.frag"
+		},
+		{
+			"files": [
+				"simple.frag.essl"
+			],
+			"name": "simple.frag"
+		},
+		{
+			"files": [
+				"simple.vert.essl"
+			],
+			"name": "simple.vert"
+		},
+		{
+			"files": [
+				"texture.frag.essl"
+			],
+			"name": "texture.frag"
+		},
+		{
+			"files": [
+				"texture.vert.essl"
+			],
+			"name": "texture.vert"
+		},
+		{
+			"files": [
+				"painter-colored.frag.essl"
+			],
+			"name": "painter-colored.frag"
+		},
+		{
+			"files": [
+				"painter-colored.vert.essl"
+			],
+			"name": "painter-colored.vert"
+		},
+		{
+			"files": [
+				"painter-image.frag.essl"
+			],
+			"name": "painter-image.frag"
+		},
+		{
+			"files": [
+				"painter-image.vert.essl"
+			],
+			"name": "painter-image.vert"
+		},
+		{
+			"files": [
+				"painter-text.frag.essl"
+			],
+			"name": "painter-text.frag"
+		},
+		{
+			"files": [
+				"painter-text.vert.essl"
+			],
+			"name": "painter-text.vert"
+		},
+		{
+			"files": [
+				"painter-video.frag.essl"
+			],
+			"name": "painter-video.frag"
+		},
+		{
+			"files": [
+				"painter-video.vert.essl"
+			],
+			"name": "painter-video.vert"
+		}
+	]
+}

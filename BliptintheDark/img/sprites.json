@@ -1,0 +1,22 @@
+{
+	"1":{"idle":[{"textureCutOut":"1"}]},
+	"2":{"idle":[{"textureCutOut":"2"}]},
+	"3":{"idle":[{"textureCutOut":"3"}]},
+	"red":{"idle":[{"textureCutOut":"red"}]},
+	"4":{"idle":[{"textureCutOut":"4"}]},
+	"5":{"idle":[{"textureCutOut":"5"}]},
+	"6":{"idle":[{"textureCutOut":"6"}]},
+	"vide":{"idle":[{"textureCutOut":"vide"}]},
+	"blipt":{"idle":[{"textureCutOut":"blipt"}]},
+	"mauve":{"idle":[{"textureCutOut":"mauve"}]},
+	"bleu":{"idle":[{"textureCutOut":"bleu"}]},
+	"orange":{"idle":[{"textureCutOut":"orange"}]},
+	"clo1":{"idle":[{"textureCutOut":"clo1"}]},
+	"clo2":{"idle":[{"textureCutOut":"clo2"}]},
+	"pieux":{"idle":[{"textureCutOut":"pieux"}]},
+	"exit":{"idle":[{"textureCutOut":"exit"}]},
+	"fond":{"idle":[{"textureCutOut":"fond"}]},
+	"welldone":{"idle":[{"textureCutOut":"welldone"}]},
+	"end":{"idle":[{"textureCutOut":"end"}]},
+	"gameover":{"idle":[{"textureCutOut":"gameover"}]}
+}

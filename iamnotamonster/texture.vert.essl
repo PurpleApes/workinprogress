@@ -1,0 +1,20 @@
+#version 100
+precision mediump float;
+varying vec2 vTextureCoord;
+attribute vec2 texCoords;
+varying float vAlpha;
+attribute float alpha;
+uniform mat4 viewproj;
+attribute vec3 position;
+
+
+void main()
+{
+	vTextureCoord = texCoords;
+	vAlpha = alpha;
+	gl_Position = (viewproj * vec4(position[0], position[1], position[2], 1.0));
+	// Branch to 6
+	// Label 6
+	return;
+}
+
