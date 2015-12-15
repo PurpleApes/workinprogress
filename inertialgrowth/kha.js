@@ -13558,6 +13558,7 @@ syst_Physics.prototype = {
 			}(this));
 			t1.get(comp_Placement).y = playerPlacement.y + playerPlacement.height / 2;
 			if(player.up == false) this.model.removeEntity(t1);
+			if(t1.get(comp_Placement).x <= -310) this.model.removeEntity(t1);
 		}
 		var _g_head7 = this.tds.list.h;
 		var _g_val7 = null;
@@ -13572,6 +13573,7 @@ syst_Physics.prototype = {
 			}(this));
 			td1.get(comp_Placement).y = playerPlacement.y - playerPlacement.height / 2;
 			if(player.down == false) this.model.removeEntity(td1);
+			if(td1.get(comp_Placement).x <= -310) this.model.removeEntity(td1);
 		}
 	}
 	,_init: function() {
@@ -13601,7 +13603,7 @@ syst_Populator.prototype = {
 		this.lastaddtime -= dt;
 	}
 	,addasteroid: function(now) {
-		var rand = Std["int"](Math.random() * 5) + 1;
+		var rand = Std["int"](Math.random() * 4) + 1;
 		var rand12 = Std["int"](Math.random() * 2);
 		var _g = 0;
 		while(_g < 7) {
