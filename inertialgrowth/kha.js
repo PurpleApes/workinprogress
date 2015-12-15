@@ -13294,7 +13294,6 @@ syst_Collision.prototype = {
 					p.get(comp_Player).contact = true;
 					p.get(comp_Placement).contact = true;
 					a.get(comp_Placement).contact = true;
-					kha_audio2_Audio1.playSound(kha_Loader.the.getSound("crash"));
 				} else {
 					p.get(comp_Player).contactasteroid = false;
 					p.get(comp_Player).contact = false;
@@ -13318,7 +13317,6 @@ syst_Collision.prototype = {
 					p.get(comp_Player).oversize += 0.025;
 					p.get(comp_Player).contact = true;
 					p.get(comp_Placement).contact = true;
-					kha_audio2_Audio1.playSound(kha_Loader.the.getSound("collect"));
 					this.model.removeEntity(s);
 				} else {
 					p.get(comp_Player).contact = false;
@@ -13387,13 +13385,7 @@ syst_Controller.prototype = {
 		}
 		if(player != null) {
 			player.reset();
-			if(this._input._keysDown.get(kha_Key.UP)) {
-				kha_audio2_Audio1.playSound(kha_Loader.the.getSound("thrust"));
-				player.up = true;
-			} else if(this._input._keysDown.get(kha_Key.DOWN)) {
-				kha_audio2_Audio1.playSound(kha_Loader.the.getSound("thrust"));
-				player.down = true;
-			}
+			if(this._input._keysDown.get(kha_Key.UP)) player.up = true; else if(this._input._keysDown.get(kha_Key.DOWN)) player.down = true;
 		}
 	}
 	,_init: function() {
