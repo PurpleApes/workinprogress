@@ -534,7 +534,7 @@ RectanglesAndSpritesPresenter.prototype = {
 		g21.set_color(kha__$Color_Color_$Impl_$.Black);
 		g21.fillRect(300. + playerPlacement.x,-200.,600,400);
 		g21.set_color(kha__$Color_Color_$Impl_$.Black);
-		g21.fillRect(-300. + playerPlacement.x,180,600,400);
+		g21.fillRect(-300. + playerPlacement.x,200,600,400);
 		var _g_head2 = this.sprites.list.h;
 		var _g_val2 = null;
 		while(_g_head2 != null) {
