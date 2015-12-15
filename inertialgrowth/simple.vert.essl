@@ -1,0 +1,14 @@
+#version 100
+precision mediump float;
+uniform mat4 viewproj;
+attribute vec3 pos;
+
+
+void main()
+{
+	gl_Position = (viewproj * vec4(pos[0], pos[1], pos[2], 1.0));
+	// Branch to 6
+	// Label 6
+	return;
+}
+

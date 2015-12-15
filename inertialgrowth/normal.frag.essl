@@ -1,0 +1,70 @@
+#version 100
+precision mediump float;
+// Unknown execution mode
+uniform sampler2D normal;
+varying vec2 vTextureCoord;
+uniform sampler2D tex;
+varying float vAlpha;
+uniform vec3 lightPos;
+uniform vec2 resolution;
+uniform vec4 lightColor;
+uniform vec4 ambientColor;
+uniform vec3 falloff;
+uniform vec3 lightPos2;
+uniform vec4 lightColor2;
+uniform vec4 ambientColor2;
+uniform vec3 falloff2;
+uniform vec2 resolution2;
+
+
+void main()
+{
+	vec3 texNormal;
+	vec4 texColor;
+	vec3 lightDir;
+	float D;
+	vec3 N;
+	vec3 L;
+	vec3 diffuse;
+	vec3 ambient;
+	float attenuation;
+	vec3 intensity;
+	vec3 lightDir2;
+	float D2;
+	vec3 N2;
+	vec3 L2;
+	vec3 diffuse2;
+	vec3 ambient2;
+	float attenuation2;
+	vec3 intensity2;
+	vec3 finalColor;
+	texNormal = vec3(texture2D(normal, vTextureCoord)[0], texture2D(normal, vTextureCoord)[1], texture2D(normal, vTextureCoord)[2]);
+	texColor = texture2D(tex, vTextureCoord);
+	texColor = (texColor * vAlpha);
+	lightDir = vec3((lightPos[0] / resolution[0]), (1.0 - (lightPos[1] / resolution[1])), lightPos[2]);
+	lightDir = vec3((vec2(lightDir[0], lightDir[1]) - (vec2(gl_FragCoord[0], gl_FragCoord[1]) / resolution))[0], (vec2(lightDir[0], lightDir[1]) - (vec2(gl_FragCoord[0], gl_FragCoord[1]) / resolution))[1], lightDir[2]);
+	lightDir[0] = (lightDir[0] * (resolution[0] / resolution[1]));
+	D = length(lightDir);
+	N = normalize(((texNormal * 2.0) - vec3(1.0, 1.0, 1.0)));
+	L = normalize(lightDir);
+	diffuse = ((vec3(lightColor[0], lightColor[1], lightColor[2]) * lightColor[3]) * max(dot(N, L), 0.0));
+	ambient = (vec3(ambientColor[0], ambientColor[1], ambientColor[2]) * ambientColor[3]);
+	attenuation = (1.0 / ((falloff[0] + (falloff[1] * D)) + ((falloff[2] * D) * D)));
+	intensity = (ambient + (diffuse * attenuation));
+	lightDir2 = vec3((lightPos2[0] / resolution[0]), (1.0 - (lightPos2[1] / resolution[1])), lightPos2[2]);
+	lightDir2 = vec3((vec2(lightDir2[0], lightDir2[1]) - (vec2(gl_FragCoord[0], gl_FragCoord[1]) / resolution))[0], (vec2(lightDir2[0], lightDir2[1]) - (vec2(gl_FragCoord[0], gl_FragCoord[1]) / resolution))[1], lightDir2[2]);
+	lightDir2[0] = (lightDir2[0] * (resolution[0] / resolution[1]));
+	D2 = length(lightDir2);
+	N2 = normalize(((texNormal * 2.0) - vec3(1.0, 1.0, 1.0)));
+	L2 = normalize(lightDir2);
+	diffuse2 = ((vec3(lightColor2[0], lightColor2[1], lightColor2[2]) * lightColor2[3]) * max(dot(N2, L2), 0.0));
+	ambient2 = (vec3(ambientColor2[0], ambientColor2[1], ambientColor2[2]) * ambientColor2[3]);
+	attenuation2 = (1.0 / ((falloff2[0] + (falloff2[1] * D2)) + ((falloff2[2] * D2) * D2)));
+	intensity2 = (ambient2 + (diffuse2 * attenuation2));
+	finalColor = (vec3(texColor[0], texColor[1], texColor[2]) * intensity);
+	gl_FragColor = vec4(finalColor[0], finalColor[1], finalColor[2], texColor[3]);
+	// Branch to 6
+	// Label 6
+	return;
+}
+

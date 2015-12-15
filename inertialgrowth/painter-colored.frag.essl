@@ -1,0 +1,14 @@
+#version 100
+precision mediump float;
+// Unknown execution mode
+varying vec4 fragmentColor;
+
+
+void main()
+{
+	gl_FragColor = fragmentColor;
+	// Branch to 6
+	// Label 6
+	return;
+}
+
